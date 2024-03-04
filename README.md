@@ -12,8 +12,8 @@ then type this
 
 ```bash
 npm install
-```bash
 npm run start
+```
 
 
 if error says npm not found
