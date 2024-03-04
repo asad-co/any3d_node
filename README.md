@@ -10,9 +10,9 @@ cd any3d_node
 
 then type this
 
-
+```bash
 npm install
-
+```bash
 npm run start
 
 
