@@ -2,11 +2,10 @@
 
 clone the directory by typing this in terminal/ command prompt
 
-
+```bash
 git clone https://github.com/asad-co/any3d_node.git
-
 cd any3d_node
-
+```
 
 then type this
 
