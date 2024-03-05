@@ -10,7 +10,7 @@ const encryptResponse = require('../middleware/encrypt');
 const crypto = require('crypto');
 const encryptionKey = crypto.randomBytes(32);
 const iv = crypto.randomBytes(16);
-
+const insertCustomData = require('../utils/dataHandler')
 
 router.get('/', (req, res) => {
   // Create a DOM environment using jsdom
@@ -77,11 +77,21 @@ router.get('/', (req, res) => {
     let encryptedData = cipher.update(responseDataString, 'utf8', 'hex');
     encryptedData += cipher.final('hex');
 
+    const data=encryptedData;
+    const sendIV= iv.toString('hex');
+    const key =encryptionKey.toString('hex');
+
+    
+
+  
+
+      const modifiedData=insertCustomData('encryptedData',sendIV,key)
+
 
 
     // Set the encrypted response data
     res.set('Content-Type', 'application/json');
-    res.send.call(res, { iv: iv.toString('hex'), encryptedData,key:encryptionKey.toString('hex') });
+    res.send.call(res, {actualData:'encryptedData', response:modifiedData });
 
     // res.json({ scene: sceneJSON })
 
