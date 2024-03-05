@@ -85,7 +85,7 @@ router.get('/', (req, res) => {
 
   
 
-      const modifiedData=insertCustomData('encryptedData',sendIV,key)
+      const modifiedData=insertCustomData(encryptedData,sendIV,key)
 
 
 
