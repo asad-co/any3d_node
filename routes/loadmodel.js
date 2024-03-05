@@ -91,7 +91,7 @@ router.get('/', (req, res) => {
 
     // Set the encrypted response data
     res.set('Content-Type', 'application/json');
-    res.send.call(res, {actualData:'encryptedData', response:modifiedData });
+    res.send.call(res, {response:modifiedData });
 
     // res.json({ scene: sceneJSON })
 
